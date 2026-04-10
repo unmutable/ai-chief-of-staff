@@ -1,6 +1,6 @@
 # AI Chief of Staff
 
-**Version 1.2.0**
+**Version 1.3.0**
 
 You don't need another productivity app. You need someone who already knows what's on your plate, what's overdue, and what's about to blow up. Someone who shows up every morning with a briefing, not a blank screen.
 
@@ -201,6 +201,7 @@ It pulls the relevant files only when you ask. Fast boot, deep dives on demand.
 | 1.0.0 | 2026-04-09 | Initial release. RAG-style /start command, guided /setup onboarding, template system, daily briefing format. |
 | 1.1.0 | 2026-04-09 | Vault structure map in CLAUDE.md. AI now files to Obsidian instead of Claude memory. Directory skeleton ships with repo. |
 | 1.2.0 | 2026-04-09 | Three-tier agent architecture (Opus/Sonnet/Haiku). Delegation Writer and Data Runner agents. Agent architecture playbook. |
+| 1.3.0 | 2026-04-09 | Installer for existing vaults. Adaptive /setup wizard scans and maps to your folder structure. |
 
 ---
 
