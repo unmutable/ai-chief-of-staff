@@ -1,0 +1,19 @@
+# User data (never commit your personal files)
+daily-notes/
+chief-of-staff/clients/*.md
+!chief-of-staff/clients/_example-client.md
+chief-of-staff/personal/weekly-rhythms.md
+chief-of-staff/personal/operating-manual.md
+chief-of-staff/personal/personal-profile.md
+chief-of-staff/time-lord.md
+
+# Claude Code local settings
+.claude/settings.local.json
+.claude/CLAUDE.local.md
+
+# Auto-memory
+.claude/memory/
+
+# OS files
+.DS_Store
+Thumbs.db
