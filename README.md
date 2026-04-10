@@ -61,7 +61,9 @@ Follow the prompts to log in. You'll need a Claude subscription (Pro at $20/mo o
 
 **Wispr Flow** (recommended): Download from [wisprflow.ai](https://wisprflow.ai/r?CALEB765). This lets you talk instead of type when filling in your files. Seriously, don't skip this. Your Operating Manual and Personal Profile are 10x easier to fill out when you can just talk through them. [Get 1 month free.](https://wisprflow.ai/r?CALEB765)
 
-### Step 2: Clone into your Obsidian vault
+### Step 2: Install into your Obsidian vault
+
+**If you're starting fresh (no existing vault structure):**
 
 ```bash
 cd ~/path/to/your/obsidian/vault
@@ -69,11 +71,24 @@ git clone https://github.com/unmutable/ai-chief-of-staff.git
 cd ai-chief-of-staff
 ```
 
-Replace `~/path/to/your/obsidian/vault` with your actual vault location. On Mac, it's usually something like `~/Documents/MyVault` or `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/YourVault`.
+**If you already have an Obsidian vault with your own folders and files:**
+
+Don't clone inside your vault. Clone the repo somewhere else, then run the installer to copy only the system files into your vault. Your existing files are never touched.
+
+```bash
+git clone https://github.com/unmutable/ai-chief-of-staff.git ~/ai-chief-of-staff
+cd ~/ai-chief-of-staff
+bash install.sh ~/path/to/your/obsidian/vault
+```
+
+The installer copies commands, agents, scripts, and templates into your vault. It never overwrites existing files. If you already have a CLAUDE.md, it leaves yours alone.
+
+On Mac, your vault path is usually something like `~/Documents/MyVault` or `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/YourVault`.
 
 ### Step 3: Run setup
 
 ```bash
+cd ~/path/to/your/obsidian/vault
 claude
 ```
 
@@ -83,7 +98,7 @@ Then type:
 /setup
 ```
 
-That's it. The setup wizard walks you through everything. It asks you questions one at a time, builds your files for you, and tells you when you're done. No manual file copying, no config editing. Just answer the questions.
+The setup wizard scans your vault and adapts to your existing folder structure. If you already have folders for projects, team members, daily notes, or anything else, it maps to them instead of creating new ones. It asks you questions one at a time, builds your files for you, and tells you when you're done. Nothing gets overwritten.
 
 **Pro tip:** Turn on Wispr Flow before you start `/setup`. You can dictate your answers instead of typing them. Way faster, way more natural.
 
@@ -101,11 +116,22 @@ Your briefing generates, your daily note populates, and you're working. That's t
 
 When new versions drop:
 
+**If you cloned directly (fresh vault):**
+
 ```bash
+cd ~/path/to/your/vault/ai-chief-of-staff
 git pull origin main
 ```
 
-Your personal files are gitignored, so pulling updates never overwrites your data. You get the latest commands, templates, and improvements without losing a thing.
+**If you used the installer (existing vault):**
+
+```bash
+cd ~/ai-chief-of-staff
+git pull origin main
+bash install.sh ~/path/to/your/obsidian/vault
+```
+
+The installer re-copies system files (commands, agents, scripts) but never overwrites your CLAUDE.md, personal files, or vault data.
 
 ---
 
